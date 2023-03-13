@@ -9,17 +9,18 @@ const contenido = (
   </div>
 );
 
-function Componente(props) {
-  console.log(props);
+function Componente({ título, children}) {
+
   return ( 
     <div>
-      <h1>{props.titulo}</h1>
-      <div>Hola desde React</div>
+      <h1>{titulo}</h1>
+      <div>{children}</div>
     </div>
   );
 }
+
    ReactDOM.render(
-   <Componente titulo="Titulo" contenido="hola desde react" />,
+   <Componente titulo="Titulo 1"> Hola desde React</Componente>,
     document.getElementById('root')
     );
 
