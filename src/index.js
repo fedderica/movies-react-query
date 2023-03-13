@@ -24,4 +24,5 @@ function Componente({ título, children}) {
     document.getElementById('root')
     );
 
+    
 // Aquí le envie propiedades al componente- forma básica y sencilla en React
