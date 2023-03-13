@@ -1,14 +1,12 @@
+import { MoviesGrid } from "./MoviesGrid";
+
 export function App() {
     return <div>
         <header>
             <h1>Movies</h1>
         </header>
         <main>
-            <ul>
-                <li> Movie 1</li>
-                <li> Movie 2</li>
-                <li> Movie 3 </li>
-            </ul>
+            <MoviesGrid /> 
         </main>
     </div>;
 };
