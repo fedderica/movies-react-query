@@ -1,6 +1,6 @@
 .moviesGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 230px)
+    grid-template-columns: repeat(auto-fill, 230px);
     gap: 40px;
     padding: 40;
     justify-content: center;
@@ -12,4 +12,4 @@
     }
 }
 
-/*CSSGRID
+/*CSSGRID*/

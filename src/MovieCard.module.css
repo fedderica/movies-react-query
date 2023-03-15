@@ -13,7 +13,7 @@
 }
 @media (max-width: 560px) {
      .movieImage {
-       width: 90%                          //aquí adapto la imagen a cualquier dispositivo
+       width: 90%;                       /*aquí adapto la imagen a cualquier dispositivo*/
        height: auto;
 
      }
