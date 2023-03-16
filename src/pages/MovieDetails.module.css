@@ -1,8 +1,7 @@
 .detailsContainer {
     display: flex;
     justify-content: center;
-
-
+    flex-wrap: wrap;  /*automaticamente empuja mi columna hacia abajo*/
 }
 
 .col {
