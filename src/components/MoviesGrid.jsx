@@ -4,9 +4,17 @@ import { MovieCard } from "./MovieCard";
 import styles from "./MoviesGrid.module.css";
 import { Spinner } from './Spinner';
 
+function useQuery () {
+  return new URLSearchParams(useLocation().search);
+}
+
 export function MoviesGrid() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+   
+  const query = useQuery();
+  const search = query.get("search");
+  console.log()
 
   useEffect(()  => {
     setIsLoading(true);
