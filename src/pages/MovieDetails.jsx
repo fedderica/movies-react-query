@@ -13,19 +13,19 @@ export function MovieDetails(){
         setIsLoading(true);
 
         get("/movie/" + movieId).then((data) => {
-            setIsLoading(false);
             setMovie(data);
-
+            setIsLoading(false);
         });
+
      }, [movieId]);
 
-     if (true) {
+     if (isLoading) {
         return <Spinner />;
      }
 
-     if (!movie) {
-        return null;
-     }
+     //if (!movie) {
+       // return null;
+    // }
 
     const imageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
     return (

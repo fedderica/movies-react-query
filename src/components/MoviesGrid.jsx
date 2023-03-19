@@ -1,24 +1,36 @@
 import { useEffect, useState } from "react";
-//import { get } from "../utils/httpClient";
+import { get } from "../utils/httpClient";
 import { MovieCard } from "./MovieCard";
 import styles from "./MoviesGrid.module.css";
+import { Spinner } from './Spinner';
 
 export function MoviesGrid() {
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(()  => {
-    fetch("https://api.themoviedb.org/3/discover/movie" , {
-      headers: {
-        Authorization: 
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmY3NzA0Nzc4MTA3ZDg2YTEwYzBhOGQ4Mzk4NmFjMSIsInN1YiI6IjY0MTMwYTc1ZTE4ZTNmMDdlOTU0YmNiNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.359_yc09HWlkWBZJOfUZmzzd-UQM01Zkv3e4uu2A4Uk",
-        "Content-Type": "application/json;charset=utf-8" ,
-      },
-    })
-    .then((result) => result.json())
-    .then((data) => {
+    setIsLoading(true);
+    get("/discover/movie").then((data) => {
       setMovies(data.results);
+      setIsLoading(false);
     });
-  }, []);
+    }, []);
+
+    if (isLoading) {
+      return  <Spinner />;
+    }
+    //fetch("https://api.themoviedb.org/3/discover/movie" , {
+      //headers: {
+        //Authorization: 
+        //"Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmY3NzA0Nzc4MTA3ZDg2YTEwYzBhOGQ4Mzk4NmFjMSIsInN1YiI6IjY0MTMwYTc1ZTE4ZTNmMDdlOTU0YmNiNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.359_yc09HWlkWBZJOfUZmzzd-UQM01Zkv3e4uu2A4Uk",
+        //"Content-Type": "application/json;charset=utf-8" ,
+     // },
+    //})
+    //.then((result) => result.json())
+    //.then((data) => {
+     // setMovies(data.results);
+    //});
+  //}, []);
     
   
 
