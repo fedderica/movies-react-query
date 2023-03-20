@@ -19,6 +19,7 @@ export function Search() {
     e.preventDefault();
     history.push("/?search=" + searchText);
   };
+
   return (
     <form className={styles.searchContainer} onSubmit={handleSubmit}>
       <div className={styles.searchBox}>
