@@ -1,6 +1,6 @@
 .title {
     text-align: center;
     font-size: 3rem;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073,
-      0 0 50px #ff0606, 0 0 60px #ff0000, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #e60000, 0 0 40px #e60073,
+      0 0 50px #ff0606, 0 0 60px #ff0000, 0 0 70px #e60000;
   }
