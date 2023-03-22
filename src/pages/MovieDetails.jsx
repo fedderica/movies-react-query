@@ -5,6 +5,7 @@ import { get } from "../utils/httpClient";
 import styles from "./MovieDetails.module.css";
 import { useQuery } from "../hooks/useQuery";
 import React from "react"
+import { getMovieImg } from "../utils/getMovieImg";
 
 export function MovieDetails() {
   const { movieId } = useParams();
@@ -33,7 +34,7 @@ export function MovieDetails() {
     return <Spinner />;
   }
 
-  const imageUrl = "https://image.tmdb.org/t/p/w500" + movie.poster_path;
+  const imageUrl = getMovieImg(movie.poster_path, 500); 
   return (
     <div className={styles.detailsContainer}>
       <img
