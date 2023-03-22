@@ -4,6 +4,7 @@ import { Spinner } from "../components/Spinner";
 import { get } from "../utils/httpClient";
 import styles from "./MovieDetails.module.css";
 import { useQuery } from "../hooks/useQuery";
+import React from "react"
 
 export function MovieDetails() {
   const { movieId } = useParams();
